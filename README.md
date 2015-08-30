@@ -1,2 +1,6 @@
 # DistributedAccountSystem
 A distributed account system with three different accounts is implemented using Chandy Lamport snapshot algorithm
+ The system shall
+allow for determining its global state by utilizing the ‘Snapshot’-algorithm by Chandy and
+Lamport. The overall system is initialized with a random amount of money and with three
+accounts. The accounts are implemented as separate processes. Furthermore, they randomly send messages to each other: each message contains a random amount of money but must not lead to a negative account balance.It contains a specific FIFO queue for each communication channel to simulate the communication delays. The queue thus delays the message delivery. For this purpose, a specific thread, which sends the first element of the queue after having slept for a random amount of time. The communication shall be carried out through UDP sockets. The money transactions shall be visualized in a GUI in a separate process. The GUI shall also allow starting the simulation. The GUI implements three buttons, enabling the sending of a marker message to one of the three processes manually. Sending the message then starts the ‘Snapshot’-algorithm. The result of the algorithm shall then be output in an info panel.
